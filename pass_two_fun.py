@@ -10,6 +10,9 @@ x        = line_1.split()
 progName = x[1]
 x.append("OBCODE") 
 pass2.write(" ".join(x)+"\n")
+if len(progName) < 6:
+                for i in range(6-len(progName)):
+                    progName = progName+"x"
 
 progLength = hex(int(adr,16)-int(start,16))
 progLength     = progLength.replace('0x','')
