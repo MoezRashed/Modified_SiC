@@ -155,7 +155,11 @@ for i in pass2.readlines():
         continue
     if tlimit >= 27:
         tstart = int(x[0],16)
-        zozo = ", "+str(hex(tlimit+3))
+        mody = str(hex(tlimit+3))
+        if len(mody) < 4:
+                for i in range(4-len(mody)):
+                    mody = "0"+mody
+        zozo = ", "+mody
         zozo = zozo.replace('0x','')
         zozo = zozo + kamba
         hte.write(zozo)
