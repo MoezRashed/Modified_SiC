@@ -41,7 +41,7 @@ instruction_map1 ={
     "TIO":"F8"
 }
 line_1 = intermediate.readline()
-pass1.write("Address ")
+pass1.write("Addr ")
 pass1.write("".join(line_1))
 base = line_1.split()
 start = base[2]

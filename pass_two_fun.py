@@ -8,7 +8,7 @@ st    = open("symbTable.txt","r")
 line_1   = pass1.readline()
 x        = line_1.split()
 progName = x[1]
-x.append("OBCODE") 
+x.append(" OBCODE") 
 pass2.write(" ".join(x)+"\n")
 if len(progName) < 6:
                 for i in range(6-len(progName)):
@@ -32,10 +32,10 @@ tlimit = 0
 for i in pass1.readlines():
     x = i.split()
 
-    # if x[3] == "*":
-    #     x[3] = "\t"
-    # if x[1]== "-":
-    #     x[1] = "\t\t"
+    if x[3] == "*":
+        x[3] = "  *  "
+    if x[1]== "-":
+        x[1] = "  -  "
     if x[2] == "RESW" or x[2] == "RESB":
         x.append("   -")
         pass2.write(" ".join(x)+"\n")
