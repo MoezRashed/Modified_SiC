@@ -141,7 +141,10 @@ for i in pass2.readlines():
 
     if x[2] =="RESB" or x[2]=="RESW":
         tstart = int(x[0],16)
-        mody   = str(hex(tlimit+3))
+        if x[2] in instruction_map1.keys() or x[2] == "BYTE":
+            mody = str(hex(tlimit+1))
+        else:
+            mody   = str(hex(tlimit+3))
         if len(mody) < 4:
                 for i in range(4-len(mody)):
                     mody = "0"+mody
@@ -158,7 +161,10 @@ for i in pass2.readlines():
         continue
     if tlimit >= 27:
         tstart = int(x[0],16)
-        mody = str(hex(tlimit+3))
+        if x[2] in instruction_map1.keys() or x[2] == "BYTE":
+            mody = str(hex(tlimit+1))
+        else:
+            mody = str(hex(tlimit+3))
         if len(mody) < 4:
                 for i in range(4-len(mody)):
                     mody = "0"+mody
@@ -182,7 +188,10 @@ for i in pass2.readlines():
             hte.write(", " + hamody)
             flagos = 1
             # print (x[0],x[4])
-        mody = str(hex(tlimit+3))
+        if x[2] in instruction_map1.keys() or x[2] == "BYTE":
+            mody = str(hex(tlimit+1))
+        else:
+            mody = str(hex(tlimit+3))
         if len(mody) < 4:
                 for i in range(4-len(mody)):
                     mody = "0"+mody

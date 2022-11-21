@@ -1,7 +1,6 @@
 #,x without space
 #lines without labels have to start with a -
 #lines without addresses add * to the end
-# immediate.write(x[0]+" "+x[2]+" "+x[3]+"\n")
 # AT end put . instead of end
 
 raw = open("input.txt","r")
